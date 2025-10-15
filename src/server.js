@@ -14,11 +14,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/usuario', (req, res) => {
-    const {nome, idade} = req.body
-    usuarios.push({nome, idade})
-    console.log(usuarios)
+    const {nome, idade, email} = req.body
+    if(nome, idade, email){
+        usuarios.push({nome, idade})
+        return res.status(201).send("Usuario Criado")
 
-    res.status(201).send("Usuario Criado")
+
+    }
+
+    return res.status(400).send("Informacoes invalidas")
 
     res.send("Voce esta na pagina principal post")
 }) 
